@@ -1,0 +1,23 @@
+{
+  "name": "hotrestaurant",
+  "version": "1.0.0",
+  "description": "The HOTTEST restaurant ever!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninjagirl2018/HotRestaurant.git"
+  },
+  "author": "Hot Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ninjagirl2018/HotRestaurant/issues"
+  },
+  "homepage": "https://github.com/ninjagirl2018/HotRestaurant#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
