@@ -9,29 +9,47 @@ console.log('after calling readFile');
 let tables = [
     {
         reserved: false,
-        number: 3,
+        number: 3
     },
     {
         reserved: false,
-        number: 2,
+        number: 2
     },
     {
         reserved: false,
-        number: 1,
+        number: 1
     }
 ]
+
+function tablesLeft(tables) {
+    let tablesLeft = 0;
+    for (table of tables) {
+        if (table.reserved === false){
+            tablesLeft ++;
+        }
+    }
+    return tablesLeft;
+}
+
 
 
 //ROUTES
 // Add two routes for the two pages
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'home.html'));
+  let tablesLeft = {
+      tablesLeft: tablesLeft(tables)
+  }
+  res.json(tablesLeft)
 });
 
 app.get('/api/tables', (req, res) => {
     res.json(tables);
   });
 
+app.get('/api/reservations', (req, res) => {
+    tablesLeft(tables);
+});
 
 // the code to process post requests
 app.post('/submit',function(request,response){
